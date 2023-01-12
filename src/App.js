@@ -5,15 +5,15 @@ import {Footer} from "./components/Footer/Footer";
 import {useTodos} from "./castomHooks/useTodos";
 
 function App() {
-    const {todos, addNewTodo, deleteTodo, changeTodoStatus, clearAllTodos} = useTodos()
+  
 
   return (
     <div className='container py-5'>
-        <Header addNewTodo={addNewTodo}/>
+        <Header/>
         <hr/>
-        <Main changeTodoStatus={changeTodoStatus} deleteTodo={deleteTodo} todos={todos}/>
+        <Main/>
         <hr/>
-        <Footer clearAllTodos={clearAllTodos}/>
+        <Footer/>
     </div>
   );
 }

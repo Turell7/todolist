@@ -1,10 +1,19 @@
 import React from "react"
+import { useDispatch } from "react-redux"
+import { clearTodosAC } from "../../redux/actionsCreators/todosAC"
 
-let Footer = ({clearAllTodos}) => {
+let Footer = () => {
+
+    const dispatch = useDispatch()
+
+    const clearAllTodosHandler = () => {
+        dispatch(clearTodosAC())
+    }
+
 console.log('Render Footer')
     return (
         <footer className="d-flex justify-content-center">
-            <button onClick={clearAllTodos} type="button" className="btn btn-danger">Clear all</button>
+            <button onClick={clearAllTodosHandler} type="button" className="btn btn-danger">Clear all</button>
         </footer>
     )
 }

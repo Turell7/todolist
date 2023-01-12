@@ -1,9 +1,13 @@
 import React, {useState} from "react";
+import { useDispatch } from "react-redux";
+import { addNewTodoAC } from "../../redux/actionsCreators/todosAC";
 
 
-let Form = ({addNewTodo}) => {
+let Form = () => {
 
     const [input, setInput] = useState('')
+
+    const dispatch = useDispatch()
 
     console.log('Render Form')
 
@@ -13,7 +17,7 @@ let Form = ({addNewTodo}) => {
         console.log({input})
 
         if (input) {
-            addNewTodo(input)
+            dispatch(addNewTodoAC(input))
             setInput('')
         }
     }

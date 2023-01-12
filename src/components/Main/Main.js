@@ -1,12 +1,10 @@
 import {TodoList} from "../TodoList/TodoList";
 
-const Main = ({todos, changeTodoStatus, deleteTodo}) => {
-    if (!todos.length) {
-        return <p>Todo list is empty...</p>
-    }
+const Main = () => {
+    
     return (
         <main>
-            <TodoList todos={todos} changeTodoStatus={changeTodoStatus} deleteTodo={deleteTodo} />
+            <TodoList/>
         </main>
     )
 }
