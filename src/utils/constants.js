@@ -1,0 +1,1 @@
+export const TODOS_KEYS_IN_LS = 'todos'
