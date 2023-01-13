@@ -1,19 +1,36 @@
-// import { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { TODOS_STATUSES } from "../../redux/slices/todosSlice/todosConstants";
+import { fetchTodos, getTodosSliceSelecror } from "../../redux/slices/todosSlice/todosSlice";
 import {TodoItem} from "../TodoItem/TodoItem";
 
 export const TodoList = () => {
     console.log('Render todo list')
-    // const dispatch = useDispatch()
+    const dispatch = useDispatch()
+    const todosLimit = 3
+    
+    const { todos, status, error} = useSelector(getTodosSliceSelecror)
+    console.log({status, error})
 
-    // useEffect(() => {
-    //     dispatch(getTodosAC())
-    // }, [dispatch])
+    useEffect(() => {
+        dispatch(fetchTodos(todosLimit))
+    }, [dispatch])
 
-    const todos = useSelector((store) => store.todos)
 
     if (!todos.length) {
         return <p>Todo list is empty...</p>
+    }
+
+    if (status === TODOS_STATUSES.FAILED) {
+        return <>
+        <p>Error: {error}</p>
+        <button onClick={() => dispatch(fetchTodos(todosLimit))}>Refetch</button>
+        </>
+
+    }
+
+    if (status === TODOS_STATUSES.LOADING) {
+        return <p>Loading...</p>
     }
 
     return (

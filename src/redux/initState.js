@@ -1,7 +1,14 @@
+import { TODOS_STATUSES } from "./slices/todosSlice/todosConstants"
+
+
 export const REDUX_LS_KEY = 'REDUX_LS_KEY'
 
 export const initialState = {
-    todos: [],
+    todos: {
+        todos: [],
+        status: TODOS_STATUSES.IDLE,
+        error: null
+    },
     counter: 0
 }
 
