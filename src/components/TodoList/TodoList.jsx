@@ -1,15 +1,14 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getTodosAC } from "../../redux/actionsCreators/todosAC";
+// import { useEffect } from "react";
+import { useSelector } from "react-redux";
 import {TodoItem} from "../TodoItem/TodoItem";
 
 export const TodoList = () => {
     console.log('Render todo list')
-    const dispatch = useDispatch()
+    // const dispatch = useDispatch()
 
-    useEffect(() => {
-        dispatch(getTodosAC())
-    }, [dispatch])
+    // useEffect(() => {
+    //     dispatch(getTodosAC())
+    // }, [dispatch])
 
     const todos = useSelector((store) => store.todos)
 

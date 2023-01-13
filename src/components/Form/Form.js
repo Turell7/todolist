@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { useDispatch } from "react-redux";
-import { addNewTodoAC } from "../../redux/actionsCreators/todosAC";
+import { todoCreate } from "../../redux/slices/todosSlice/todosSlice";
 
 
 let Form = () => {
@@ -13,11 +13,9 @@ let Form = () => {
 
     const submitHandler = (e) => {
         e.preventDefault()
-
-        console.log({input})
-
+        
         if (input) {
-            dispatch(addNewTodoAC(input))
+            dispatch(todoCreate(input))
             setInput('')
         }
     }

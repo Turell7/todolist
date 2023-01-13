@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { changeStatusTodoAC, deleteTodoAC } from "../../redux/actionsCreators/todosAC";
+import { todoChangeStatus, todoDelete } from "../../redux/slices/todosSlice/todosSlice";
 import todoItemStyles from "./styles.module.css";
 
 export const TodoItem = ({id, title, status, inx}) => {
@@ -7,11 +7,11 @@ export const TodoItem = ({id, title, status, inx}) => {
     const dispatch = useDispatch()
 
     const deleteHandler = () => {
-        dispatch(deleteTodoAC(id))
+        dispatch(todoDelete(id))
     }
 
     const changeStatusHandler = () => {
-        dispatch(changeStatusTodoAC(id))
+        dispatch(todoChangeStatus(id))
     }
 
     return (

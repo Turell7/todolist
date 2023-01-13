@@ -1,13 +1,13 @@
 import React from "react"
 import { useDispatch } from "react-redux"
-import { clearTodosAC } from "../../redux/actionsCreators/todosAC"
+import { todosClear } from "../../redux/slices/todosSlice/todosSlice"
 
 let Footer = () => {
 
     const dispatch = useDispatch()
 
     const clearAllTodosHandler = () => {
-        dispatch(clearTodosAC())
+        dispatch(todosClear())
     }
 
 console.log('Render Footer')

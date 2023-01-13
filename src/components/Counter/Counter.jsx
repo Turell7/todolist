@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux"
-import { clearCounterAC, decrementCounterAC, incrementCounterAC } from "../../redux/actionsCreators/counterAC"
+import { clearCounter, decrement, increment } from "../../redux/slices/counterSlice/counterSlice"
 
 export const Counter = () => {
 
@@ -9,13 +9,13 @@ export const Counter = () => {
     const counter = useSelector((store) => store.counter)
 
     const decrementHandler = () => {
-        dispatch(decrementCounterAC())
+        dispatch(decrement())
     }
     const incrementHandler = () => {
-        dispatch(incrementCounterAC())
+        dispatch(increment())
     }
     const clearCounterHandler = () => {
-        dispatch(clearCounterAC())
+        dispatch(clearCounter())
     }
 
     return <div>
