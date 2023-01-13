@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addNewTodosAC, getTodosAC } from "../../redux/actionsCreators/todosAC";
+import { getTodosAC } from "../../redux/actionsCreators/todosAC";
 import {TodoItem} from "../TodoItem/TodoItem";
 
 export const TodoList = () => {

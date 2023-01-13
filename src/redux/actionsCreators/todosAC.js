@@ -29,7 +29,7 @@ export const getTodosAC = () => async (dispatch) => {
         }
     })
 
-    dispatch(addNewTodoAC(preparedTodos))
+    dispatch(addNewTodosAC(preparedTodos))
 }
 
 export const deleteTodoAC  = (id) => ({
