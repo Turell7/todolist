@@ -4,7 +4,7 @@ import {TodoItem} from "../TodoItem/TodoItem";
 export const TodoList = () => {
     console.log('Render todo list')
 
-    const { todos } = useSelector((store) => store)
+    const todos = useSelector((store) => store.todos)
 
     if (!todos.length) {
         return <p>Todo list is empty...</p>
